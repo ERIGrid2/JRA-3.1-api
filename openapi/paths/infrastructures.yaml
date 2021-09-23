@@ -1,0 +1,22 @@
+---
+get:
+  tags:
+  - infrastructure
+  summary: Get available infrastructures
+  description: ''
+  operationId: getInfrastructures
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/InfrastructureId.yaml
+            example:
+            - dtu
+            - rwth
+            - uos
+    '405':
+      description: Invalid input

@@ -1,9 +1,27 @@
+---
 type: object
+required:
+  - id
 properties:
   id:
-    type: integer
-    format: int64
+    $ref: InfrastructureId.yaml
   name:
     type: string
-xml:
-  name: Category
+    example: Real-time Laboratory
+  documentation:
+    type: string
+    format: url
+  operator:
+    $ref: Contact.yaml
+  contact:
+    $ref: Contact.yaml
+  location:
+    $ref: Location.yaml
+  components:
+    type: array
+    items:
+      $ref: Component.yaml
+  signals:
+    type: array
+    items:
+      $ref: Signal.yaml

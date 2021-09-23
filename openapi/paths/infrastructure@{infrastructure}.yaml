@@ -1,30 +1,52 @@
+---
 get:
   tags:
-    - infrastructure
+  - infrastructure
   summary: Get infrastructure
-  description: ''
   operationId: getInfrastructure
   parameters:
-    - in: path
-      name: infrastructure
-      required: true
-      schema:
-        type: string
+  - in: path
+    name: infrastructure
+    required: true
+    schema:
+      $ref: ../components/schemas/InfrastructureId.yaml
   responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Infrastructure.yaml
     '405':
       description: Invalid input
+
 delete:
   tags:
-    - infrastructure
+  - infrastructure
   summary: Delete infrastructure
-  description: ''
   operationId: deleteInfrastructure
   parameters:
-    - in: path
-      name: infrastructure
-      required: true
-      schema:
-        type: string
+  - in: path
+    name: infrastructure
+    required: true
+    schema:
+      $ref: ../components/InfrastructureId.yaml
   responses:
+    '200':
+      description: Success
     '405':
       description: Invalid input
+
+post:
+  tags:
+  - infrastructure
+  summary: Provide infrastructure inventory
+  operationId: updateInfrastructure
+  responses:
+    '200':
+      description: Success
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          $ref: '../components/schemas/Infrastructure.yaml'

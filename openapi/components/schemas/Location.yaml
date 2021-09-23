@@ -1,0 +1,43 @@
+---
+type: object
+properties:
+  country:
+    type: string
+    maxLength: 2
+    minLength: 2
+    description: An [ISO 3166-1 Alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
+    example: de
+  state:
+    type: string
+    example: North-Rhine-Westfalia
+  city:
+    type: string
+    example: Aachen
+  postalcode:
+    type: integer
+    example: 52070
+  street:
+    type: string
+    example: Mathieustr.
+  housenumber:
+    type: string
+    example: '10'
+  room:
+    type: string
+    example: '00.01'
+  coordinates:
+    type: object
+    description: Geographical coordinates in the WGS84 reference system
+    properties:
+      latitude:
+        type: number
+        minimum: -180
+        maximum: 180
+        example: 6.05187234053023
+      longitude:
+        type: number
+        minimum: -90
+        maximum: 90
+        example: 50.7895493602883
+  description:
+    type: string

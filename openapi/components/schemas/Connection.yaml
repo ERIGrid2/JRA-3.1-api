@@ -1,0 +1,10 @@
+---
+type: object
+required:
+  - from
+  - to
+properties:
+  from:
+    $ref: SignalReference.yaml
+  to:
+      $ref: SignalReference.yaml

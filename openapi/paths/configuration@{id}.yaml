@@ -1,0 +1,36 @@
+---
+
+get:
+  tags:
+  - configuration
+  summary: Create a new session
+  operationId: getCompiledConfiguration
+  parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: ../components/schemas/ConfigurationId.yaml
+  responses:
+    '200':
+      description: Success
+    '405':
+      description: Invalid input
+
+delete:
+  tags:
+  - configuration
+  summary: Delete a session
+  description: ''
+  operationId: deleteConfiguration
+  parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: ../components/schemas/ConfigurationId.yaml
+  responses:
+    '200':
+      description: Success
+    '405':
+      description: Invalid input

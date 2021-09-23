@@ -1,15 +1,25 @@
+---
 get:
   tags:
-    - infrastructure
+  - infrastructure
   summary: Get infrastructure signals
   description: ''
   operationId: getInfrastructureSignals
   parameters:
-    - in: path
-      name: infrastructure
-      required: true
-      schema:
-        type: string
+  - in: path
+    name: infrastructure
+    required: true
+    schema:
+      $ref: ../components/schemas/InfrastructureId.yaml
   responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            description: List of infrastructure signals
+            items:
+              $ref: ../components/schemas/Signal.yaml
     '405':
       description: Invalid input

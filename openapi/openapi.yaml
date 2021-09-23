@@ -57,20 +57,21 @@ info:
   x-logo:
     url: https://erigrid2.eu/wp-content/uploads/2020/06/cropped-Logo_ERIGrid2_4C_highRes-01_.png
     backgroundColor: "#ffffff"
+    href: https://erigrid2.eu
 tags:
-  - name: config
-    description: Configuration managment
-  - name: infrastructure
-    description: Infrastructure discovery
+- name: configuration
+  description: Configuration managment
+- name: infrastructure
+  description: Infrastructure discovery
 paths:
-  /config:
-    $ref: paths/config.yaml
+  /configurations:
+    $ref: paths/configurations.yaml
   '/config/{id}':
-    $ref: 'paths/config@{id}.yaml'
+    $ref: 'paths/configuration@{id}.yaml'
   '/config/{id}/{infrastructure}':
-    $ref: 'paths/config@{id}@{infrastructure}.yaml'
-  /infrastructure:
-    $ref: paths/infrastructure.yaml
+    $ref: 'paths/configuration@{id}@{infrastructure}.yaml'
+  /infrastructures:
+    $ref: paths/infrastructures.yaml
   '/infrastructure/{infrastructure}':
     $ref: 'paths/infrastructure@{infrastructure}.yaml'
   '/infrastructure/{infrastructure}/signals':
@@ -81,5 +82,5 @@ externalDocs:
   description: Find out more about ERIGrid 2.0
   url: 'https://erigrid2.eu'
 servers:
-  - url: 'https://api.erigrid2.eu/v1'
-  - url: 'http://api.erigrid2.eu/v1'
+- url: 'https://api.erigrid2.eu/v1'
+- url: 'http://api.erigrid2.eu/v1'

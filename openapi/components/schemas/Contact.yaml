@@ -1,0 +1,21 @@
+---
+type: object
+required:
+  - name
+properties:
+  name:
+    type: string
+    example: Steffen Vogel
+  email:
+    type: string
+    format: email
+    example: svogel@eonerc.rwth-aachen.de
+  phone:
+    type: string
+    example: +49 241 80577
+    pattern: '[0-9 +-()]+'
+  institution:
+    type: string
+    example: Institute for Automation of Complex Power Systems, RWTH Aachen University
+  location:
+    $ref: Location.yaml

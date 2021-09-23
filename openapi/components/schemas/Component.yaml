@@ -1,0 +1,27 @@
+---
+type: object
+required:
+  - id
+  - category
+  - type
+properties:
+  id:
+    $ref: ComponentId.yaml
+  category:
+    type: string
+    enum:
+    - simulator
+    - gateway
+    - converter
+    - ied
+    example: simulator
+  type:
+    type: string
+    example: opal-rt
+  model:
+    type: string
+    example: OP5707
+  location:
+    $ref: Location.yaml
+  contact:
+    $ref: Contact.yaml

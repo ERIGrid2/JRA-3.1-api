@@ -1,0 +1,115 @@
+---
+type: object
+required:
+  - id
+  - unit
+properties:
+  id:
+    $ref: SignalId.yaml
+  unit:
+    type: string
+    description: The unit of the signal (see [IANA SenML registry](https://www.iana.org/assignments/senml/senml.xhtml) & [RFC8428](https://www.iana.org/go/rfc8428))
+    enum:
+    - '%'
+    - '%EL'
+    - '%RH'
+    - /
+    - 1/min
+    - 1/s
+    - A
+    - B
+    - beat/min
+    - beats
+    - bit
+    - bit/s
+    - Bq
+    - Bspl
+    - C
+    - cd
+    - cd/m2
+    - Cel
+    - count
+    - dB
+    - dBW
+    - deg
+    - EL
+    - F
+    - g
+    - Gy
+    - H
+    - Hz
+    - J
+    - J/m
+    - K
+    - kat
+    - kg
+    - kg/m3
+    - l
+    - l/s
+    - lat
+    - lm
+    - lon
+    - lx
+    - m
+    - m/s
+    - m/s2
+    - m2
+    - m3
+    - m3/s
+    - mol
+    - N
+    - NTU
+    - Ohm
+    - Pa
+    - pH
+    - rad
+    - s
+    - S
+    - S/m
+    - sr
+    - Sv
+    - T
+    - V
+    - VA
+    - var
+    - vars
+    - VAs
+    - W
+    - W/m2
+    - Wb
+    example: V
+  # multiplier:
+  #   type: number
+  #   example: 1e3
+  # prefix:
+  #   type: string
+  #   enum:
+  #   - zetta
+  #   - exa
+  #   - peta
+  #   - tera
+  #   - giga
+  #   - mega
+  #   - kilo
+  #   - hecto
+  #   - deka
+  #   - deci
+  #   - centi
+  #   - milli
+  #   - micro
+  #   - nano
+  #   - pico
+  #   - femto
+  #   - atto
+  #   - zepto
+  #   - yocto
+  default:
+    type: number
+    example: 230.0
+  transports:
+    type: array
+    items:
+      $ref: SignalTransport.yaml
+    example:
+    - /dnsaddr/syslab.elektro.dtu.dk/tcp/1883/mqtt/
+    - /ipv4/134.130.169.31/udp/12000/raw/4

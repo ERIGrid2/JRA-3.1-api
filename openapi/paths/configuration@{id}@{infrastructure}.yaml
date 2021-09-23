@@ -1,0 +1,23 @@
+---
+get:
+  tags:
+  - configuration
+  summary: Get compiled infrastructure configuration
+  description: ''
+  operationId: getCompiledInfrastructureConfiguration
+  parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: ../components/schemas/ConfigurationId.yaml
+  - in: path
+    name: infrastructure
+    required: true
+    schema:
+      $ref: ../components/schemas/InfrastructureId.yaml
+  responses:
+    '200':
+      description: Success
+    '405':
+      description: Invalid input
