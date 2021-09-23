@@ -1,5 +1,49 @@
 # The ERIGrid 2.0 middleware API OpenAPI Definition
 
+## Architecture
+
+There are two(three) APIs:
+
+- Transport API
+- Session API
+- Infrastructure API
+
+### Components
+
+#### User Interface
+
+Provides a web interface to the user for inspecting discovered infrastructure information and managing session configurations.
+
+#### API Server
+
+Provides the endpoints for the Session and Infrastructure APIs
+
+#### Infrastructure Provisioner
+
+Fetches a compiled infrastructure configuration and applies/configures it to the physical infrastructure.
+
+### Transport
+
+A pluggable transport for exchanging interface signals between infrastructure components such as digital real-time simulators or other laboratory equipment.
+
+## Concepts
+
+### Multiaddr
+
+Signals are identified my [Multiaddr](https://github.com/multiformats/multiaddr)'s.
+A multiaddr describes the signal in a unique way.
+
+Users reference signals using the presentation layer using symbolic names.
+
+The 
+
+#### Examples
+
+- Presentation Layer: `/system/ireland_south_distribution/bus/123/signal/V1`
+- Session Layer: `/infrastructure/dtu/simulator/op5606/signal/`
+- Transport + Network Layer: `/dnsaddr/syslab.elektro.dtu.dk/tcp/1883/mqtt/`
+
+
 ## Working on your OpenAPI Definition
 
 ### Install
