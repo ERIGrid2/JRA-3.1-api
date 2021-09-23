@@ -1,0 +1,211 @@
+swagger: "2.0"
+info:
+  description: ""
+  version: "1.0.0"
+  title: "The ERIGrid 2.0 middleware API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "info@erigrid2.eu"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "api.erigrid2.eu"
+basePath: "/v1"
+tags:
+- name: "config"
+  description: "Configuration managment"
+- name: "infrastructure"
+  description: "Infrastructure discovery"
+schemes:
+- "https"
+- "http"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /config:
+    post:
+      tags:
+      - "config"
+      summary: "Open a new session"
+      description: ""
+      operationId: "addConfiguration"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "The session configuration which is being created."
+        required: true
+        schema:
+          $ref: "#/definitions/Configuration"
+      responses:
+        "405":
+          description: "Invalid input"
+  /config/{id}:
+    delete:
+      tags:
+      - "config"
+      summary: "Open a new session"
+      description: ""
+      operationId: "delete Configuration"
+      parameters:
+      - in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "405":
+          description: "Invalid input"
+          
+    get:
+      tags:
+      - "config"
+      summary: "Open a new session"
+      description: ""
+      operationId: "getCompiledConfiguration"
+      parameters:
+      - in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "405":
+          description: "Invalid input"
+          
+  /config/{id}/{infrastructure}:
+    get:
+      tags:
+      - "config"
+      summary: "Get compiled infrastructure configuration"
+      description: ""
+      operationId: "getCompiledInfrastructureConfiguration"
+      parameters:
+      - in: path
+        name: id
+        required: true
+        type: integer
+      - in: path
+        name: infrastructure
+        required: true
+        type: string
+      responses:
+        "405":
+          description: "Invalid input"
+          
+  /infrastructure:
+    get:
+      tags:
+      - "infrastructure"
+      summary: "Get avavailable infrastructures"
+      description: ""
+      operationId: "getInfrastructures"
+      responses:
+        "405":
+          description: "Invalid input"
+          
+  /infrastructure/{infrastructure}:
+    get:
+      tags:
+      - "infrastructure"
+      summary: "Get infrastructure"
+      description: ""
+      operationId: "getInfrastructure"
+      parameters:
+      - in: path
+        name: infrastructure
+        type: string
+        required: true
+      responses:
+        "405":
+          description: "Invalid input"
+          
+    delete:
+      tags:
+      - "infrastructure"
+      summary: "Delete infrastructure"
+      description: ""
+      operationId: "deleteInfrastructure"
+      parameters:
+      - in: path
+        name: infrastructure
+        type: string
+        required: true
+      responses:
+        "405":
+          description: "Invalid input"
+          
+  /infrastructure/{infrastructure}/signals:
+    get:
+      tags:
+      - "infrastructure"
+      summary: "Get infrastructure signals"
+      description: ""
+      operationId: "getInfrastructureSignals"
+      parameters:
+      - in: path
+        name: infrastructure
+        type: string
+        required: true
+      responses:
+        "405":
+          description: "Invalid input"
+          
+  /infrastructure/{infrastructure}/components:
+    get:
+      tags:
+      - "infrastructure"
+      summary: "Get infrastructure components"
+      description: ""
+      operationId: "getInfrastructureComponents"
+      parameters:
+      - in: path
+        name: infrastructure
+        type: string
+        required: true
+      responses:
+        "405":
+          description: "Invalid input"
+          
+
+definitions:
+  Configuration:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      petId:
+        type: "integer"
+        format: "int64"
+      quantity:
+        type: "integer"
+        format: "int32"
+      shipDate:
+        type: "string"
+        format: "date-time"
+      status:
+        type: "string"
+        description: "Order Status"
+        enum:
+        - "placed"
+        - "approved"
+        - "delivered"
+      complete:
+        type: "boolean"
+        default: false
+    xml:
+      name: "Order"
+  Infrastructure:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+    xml:
+      name: "Category"
+  
+externalDocs:
+  description: "Find out more about ERIGrid 2.0"
+  url: "https://erigrid2.eu"
