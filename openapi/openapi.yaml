@@ -6,9 +6,13 @@ info:
   termsOfService: 'http://swagger.io/terms/'
   contact:
     email: info@erigrid2.eu
+    url: https://erigrid2.eu/contact/
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  x-logo:
+    url: https://erigrid2.eu/wp-content/uploads/2020/06/cropped-Logo_ERIGrid2_4C_highRes-01_.png
+    backgroundColor: "#ffffff"
 tags:
   - name: config
     description: Configuration managment
