@@ -1,0 +1,9 @@
+get:
+  tags:
+    - infrastructure
+  summary: Get avavailable infrastructures
+  description: ''
+  operationId: getInfrastructures
+  responses:
+    '405':
+      description: Invalid input

@@ -1,0 +1,20 @@
+get:
+  tags:
+    - config
+  summary: Get compiled infrastructure configuration
+  description: ''
+  operationId: getCompiledInfrastructureConfiguration
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+    - in: path
+      name: infrastructure
+      required: true
+      schema:
+        type: string
+  responses:
+    '405':
+      description: Invalid input

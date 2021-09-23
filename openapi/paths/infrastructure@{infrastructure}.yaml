@@ -1,0 +1,30 @@
+get:
+  tags:
+    - infrastructure
+  summary: Get infrastructure
+  description: ''
+  operationId: getInfrastructure
+  parameters:
+    - in: path
+      name: infrastructure
+      required: true
+      schema:
+        type: string
+  responses:
+    '405':
+      description: Invalid input
+delete:
+  tags:
+    - infrastructure
+  summary: Delete infrastructure
+  description: ''
+  operationId: deleteInfrastructure
+  parameters:
+    - in: path
+      name: infrastructure
+      required: true
+      schema:
+        type: string
+  responses:
+    '405':
+      description: Invalid input

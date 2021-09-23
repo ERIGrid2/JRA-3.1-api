@@ -1,0 +1,30 @@
+delete:
+  tags:
+    - config
+  summary: Open a new session
+  description: ''
+  operationId: delete Configuration
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+  responses:
+    '405':
+      description: Invalid input
+get:
+  tags:
+    - config
+  summary: Open a new session
+  description: ''
+  operationId: getCompiledConfiguration
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+  responses:
+    '405':
+      description: Invalid input

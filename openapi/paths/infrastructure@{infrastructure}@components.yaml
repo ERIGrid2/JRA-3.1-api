@@ -1,0 +1,15 @@
+get:
+  tags:
+    - infrastructure
+  summary: Get infrastructure components
+  description: ''
+  operationId: getInfrastructureComponents
+  parameters:
+    - in: path
+      name: infrastructure
+      required: true
+      schema:
+        type: string
+  responses:
+    '405':
+      description: Invalid input

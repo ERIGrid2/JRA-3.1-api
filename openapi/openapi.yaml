@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  description: ''
+  version: 1.0.0
+  title: The ERIGrid 2.0 middleware API
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: info@erigrid2.eu
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: config
+    description: Configuration managment
+  - name: infrastructure
+    description: Infrastructure discovery
+paths:
+  /config:
+    $ref: paths/config.yaml
+  '/config/{id}':
+    $ref: 'paths/config@{id}.yaml'
+  '/config/{id}/{infrastructure}':
+    $ref: 'paths/config@{id}@{infrastructure}.yaml'
+  /infrastructure:
+    $ref: paths/infrastructure.yaml
+  '/infrastructure/{infrastructure}':
+    $ref: 'paths/infrastructure@{infrastructure}.yaml'
+  '/infrastructure/{infrastructure}/signals':
+    $ref: 'paths/infrastructure@{infrastructure}@signals.yaml'
+  '/infrastructure/{infrastructure}/components':
+    $ref: 'paths/infrastructure@{infrastructure}@components.yaml'
+externalDocs:
+  description: Find out more about ERIGrid 2.0
+  url: 'https://erigrid2.eu'
+servers:
+  - url: 'https://api.erigrid2.eu/v1'
+  - url: 'http://api.erigrid2.eu/v1'
