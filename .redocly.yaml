@@ -9,6 +9,8 @@ lint:
 referenceDocs:
   htmlTemplate: ./docs/index.html
   theme:
+    logo:
+      gutter: 20px
     colors:
       primary:
         main: "#32329f"
