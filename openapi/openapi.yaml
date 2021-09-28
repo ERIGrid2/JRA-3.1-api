@@ -4,31 +4,39 @@ info:
   description: |
     ## Architecture
 
-    There are two(three) APIs:
-
-    - Transport API
-    - Session API
-    - Infrastructure API
+    ![](erigrid_api.svg)
 
     ### Components
 
-    #### User Interface
+    #### User Interface (UI)
 
     Provides a web interface to the user for inspecting discovered infrastructure information and managing session configurations.
 
     #### API Server
 
-    Provides the endpoints for the Session and Infrastructure APIs
+    The API Server provides a HTTP REST API for exchanging ECs, EDs, HTDs, sessions and user
 
-    #### Infrastructure Provisioner
+    #### Experiment Description Compiler (EDC)
 
     Fetches a compiled infrastructure configuration and applies/configures it to the physical infrastructure.
 
-    ### Transport
+    #### RI Controller (RIC)
+
+    Fetches compiled experiment
+
+    #### HTD Generator
+
+    Fetches compiled experiment configurations and renders them into ERIGrid Holistic Test Descriptions (HTD) for human consumption.
+
+    ### Transport(s)
 
     A pluggable transport for exchanging interface signals between infrastructure components such as digital real-time simulators or other laboratory equipment.
 
     ## Concepts
+
+    ### Experiment Description (ED)
+
+    ### Experiment Configuration (EC)
 
     ### Multiaddr
 
