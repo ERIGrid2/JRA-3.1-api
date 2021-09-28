@@ -12,7 +12,7 @@ jobs:
     - name: Create public dir
       run: mkdir public
     - name: Copy static assets
-      run: cp docs/favicon.png public/
+      run: cp docs/* public/
     - name: Build docs
       run: npx redoc-cli bundle -o public/index.html openapi/openapi.yaml
     - name: Deploy to GitHub Pages
