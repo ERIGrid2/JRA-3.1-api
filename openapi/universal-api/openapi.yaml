@@ -2,7 +2,13 @@
 openapi: 3.0.1
 info:
   title: ERIGrid Universal Data Exchange API
-  description: "A common API used by ERIGrid research infrastructures to exchange signals for geographically distributed experiments."
+  description: |
+    A common API used by ERIGrid research infrastructures to exchange signals for geographically distributed experiments.
+
+    ## Funding acknowledgement
+
+    <img alt="European Flag" src="https://erigrid2.eu/wp-content/uploads/2020/03/europa_flag_low.jpg" align="left" style="margin-right: 10px"/> The development of JRA3.1 API has been supported by the [ERIGrid 2.0](https://erigrid2.eu) project of the H2020 Programme under [Grant Agreement No. 870620](https://cordis.europa.eu/project/id/870620)
+
   termsOfService: https://erigrid2.eu/disclaimer/
   contact:
     name: ERIGrid 2.0 consortium
