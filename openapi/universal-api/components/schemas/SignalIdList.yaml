@@ -1,0 +1,10 @@
+---
+SignalIdList:
+  type: array
+  title: Signal ID list
+  items:
+    $ref: 'SignalId.yaml'
+  example:
+  - aachen/lv/bus1/voltage/a
+  - aachen/lv/bus1/voltage/b
+  - aachen/lv/bus1/voltage/c

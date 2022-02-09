@@ -53,24 +53,34 @@ info:
     - Session Layer: `/infrastructure/dtu/simulator/op5606/signal/`
     - Transport + Network Layer: `/dnsaddr/syslab.elektro.dtu.dk/tcp/1883/mqtt/`
 
-  version: 1.0.0
   title: The ERIGrid 2.0 middleware API
-  termsOfService: 'http://swagger.io/terms/'
+  termsOfService: https://erigrid2.eu/disclaimer/
   contact:
+    name: ERIGrid 2.0 consortium
     email: info@erigrid2.eu
-    url: https://erigrid2.eu/contact/
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.1.0alpha
   x-logo:
     url: https://erigrid2.eu/wp-content/uploads/2020/06/cropped-Logo_ERIGrid2_4C_highRes-01_.png
     backgroundColor: "#ffffff"
     href: https://erigrid2.eu
+
+externalDocs:
+  description: Find out more about ERIGrid 2.0
+  url: 'https://erigrid2.eu'
+
+servers:
+- url: 'https://api.erigrid2.eu/v1'
+- url: 'http://api.erigrid2.eu/v1'
+
 tags:
 - name: configuration
   description: Configuration managment
 - name: infrastructure
   description: Infrastructure discovery
+
 paths:
   /configurations:
     $ref: paths/configurations.yaml
@@ -86,9 +96,3 @@ paths:
     $ref: 'paths/infrastructure@{infrastructure}@signals.yaml'
   '/infrastructure/{infrastructure}/components':
     $ref: 'paths/infrastructure@{infrastructure}@components.yaml'
-externalDocs:
-  description: Find out more about ERIGrid 2.0
-  url: 'https://erigrid2.eu'
-servers:
-- url: 'https://api.erigrid2.eu/v1'
-- url: 'http://api.erigrid2.eu/v1'

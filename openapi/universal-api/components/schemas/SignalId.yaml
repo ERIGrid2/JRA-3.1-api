@@ -1,0 +1,7 @@
+---
+SignalId:
+  type: string
+  title: Signal ID
+  pattern: ^[a-z0-9-_/]$
+  description: A globally unique identifier for the signal
+  example: aachen/lv/bus1/voltage/a

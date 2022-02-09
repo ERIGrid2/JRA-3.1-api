@@ -1,0 +1,14 @@
+---
+get:
+  tags:
+  - api
+  summary: Get API infos
+  operationId: getInfos
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Info.yaml

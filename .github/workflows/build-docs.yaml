@@ -13,8 +13,10 @@ jobs:
       run: mkdir public
     - name: Copy static assets
       run: cp docs/* public/
+    - name: Build middleware API
+      run: npx redoc-cli bundle -t docs/template.html -o public/middleware.html openapi/middleware/openapi.yaml
     - name: Build docs
-      run: npx redoc-cli bundle -o public/index.html openapi/openapi.yaml
+      run: npx redoc-cli bundle -t docs/template.html -o public/universal-api.html openapi/universal-api/openapi.yaml
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
