@@ -1,17 +1,17 @@
 ---
 get:
- tags:
- - api
- summary: Get configuration
- description: Get user provided configuration for this source. This can be used to pass configuration from the global data exchange configuration.
- operationId: getConfig
+  tags:
+  - api
+  summary: Get configuration
+  description: Get user provided configuration for this source. This can be used to pass configuration from the global data exchange configuration.
+  operationId: getConfig
 
- responses:
-   200:
-     description: Success
-     content:
-       application/json:
-         schema:
-           type: object
-           description: The user-provided configuration file
-           additionalProperties: true
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            description: The user-provided configuration file
+            additionalProperties: true

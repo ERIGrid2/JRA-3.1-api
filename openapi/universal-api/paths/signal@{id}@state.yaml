@@ -16,7 +16,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Signal.yaml
+            $ref: ../components/schemas/SignalState.yaml
     400:
       description: Invalid signal ID supplied
     404:
@@ -38,7 +38,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/Signal.yaml
+          $ref: ../components/schemas/SignalState.yaml
 
   responses:
     200:

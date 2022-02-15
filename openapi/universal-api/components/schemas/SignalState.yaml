@@ -1,0 +1,22 @@
+---
+type: object
+
+required:
+- value
+- timestamp
+
+properties:
+  timestamp:
+    title: Signal timestamp
+    type: number
+    description: A point in time when this signal has been measured or generated
+      by a contoller or simulator. Provided as floating point UNIX timestamp
+    example: 1644407419.123
+
+  value:
+    title: Signal Value
+    type: number
+    example: 230.4
+
+    # TODO: After MVP
+    #  Add support for float, integer, boolean, complex

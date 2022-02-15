@@ -44,5 +44,5 @@ paths:
     $ref: paths/config.yaml
   /signals:
     $ref: paths/signals.yaml
-  /signal/{id}':
-    $ref: paths/signal@{id}.yaml
+  /signal/{id}/state:
+    $ref: paths/signal@{id}@state.yaml
