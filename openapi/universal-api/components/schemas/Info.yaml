@@ -1,20 +1,19 @@
 ---
-Info:
-  type: object
-  properties:
-    id:
-      $ref: '#/components/schemas/NodeId'
+type: object
+properties:
+  id:
+    $ref: '#/components/schemas/NodeId'
 
-    transport:
-      type: object
+  transport:
+    type: object
 
-      properties:
-        type:
-          type: string
-          description: Name of the transport used
-          example: villas-node
+    properties:
+      type:
+        type: string
+        description: Name of the transport used
+        example: villas-node
 
-        version:
-          type: string
-          description: Software version
-          example: v0.12.0
+      version:
+        type: string
+        description: Software version
+        example: v0.12.0

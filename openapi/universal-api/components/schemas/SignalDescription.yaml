@@ -1,12 +1,11 @@
 ---
 type: object
 properties:
-
   id:
-    $ref: 'SignalId.yaml'
+    $ref: SignalId.yaml
 
   source:
-    $ref: 'NodeId.yaml'
+    $ref: NodeId.yaml
 
   writable:
     type: boolean

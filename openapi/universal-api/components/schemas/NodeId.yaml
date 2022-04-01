@@ -1,6 +1,5 @@
 ---
-NodeId:
-  type: string
-  title: Node ID
-  description: A globally unique identifier for the transport endpoint
-  pattern: ^[a-z0-9-]{3,}$
+type: string
+title: Node ID
+description: A globally unique identifier for the transport endpoint
+pattern: ^[a-z0-9-]{3,}$

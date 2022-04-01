@@ -1,6 +1,5 @@
 ---
-SignalDescriptionList:
-  type: array
-  title: List of signal description
-  items:
-    $ref: 'SignalDescription.yaml'
+type: array
+title: List of signal description
+items:
+  $ref: SignalDescription.yaml
