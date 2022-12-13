@@ -94,7 +94,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 0.1.0alpha
+  version: v2.0
   x-logo:
     url: https://erigrid2.eu/wp-content/uploads/2020/06/cropped-Logo_ERIGrid2_4C_highRes-01_.png
     backgroundColor: "#ffffff"
@@ -109,11 +109,10 @@ servers:
 - url: 'http://api.erigrid2.eu/v2'
 
 tags:
-- name: api
-  description: API handling
-
 - name: channels
   description: Channel handling
+- name: samples
+- name: events
 
 paths:
   /info:

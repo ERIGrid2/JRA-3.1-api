@@ -1,7 +1,7 @@
 ---
 get:
   tags:
-  - channels
+  - samples
   summary: Get the last sample of a channel
   operationId: getChannel
   parameters:
@@ -24,8 +24,8 @@ get:
 
 put:
   tags:
-  - channels
-  summary: Update an existing channel
+  - samples
+  summary: Update sample of a channel
   operationId: updateChannel
   parameters:
   - name: id

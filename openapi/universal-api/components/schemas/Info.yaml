@@ -2,7 +2,9 @@
 type: object
 properties:
   id:
-    $ref: '#/components/schemas/NodeId'
+    description: The name of the node
+    example: rwth
+    type: string
 
   transport:
     type: object

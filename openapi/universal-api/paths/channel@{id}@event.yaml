@@ -1,7 +1,7 @@
 ---
 get:
   tags:
-  - channels
+  - events
   summary: Get events from a channel
   operationId: getChannelEvent
   parameters:
@@ -35,7 +35,7 @@ get:
 
 put:
   tags:
-  - channels
+  - events
   summary: Send event to channel
   operationId: putChannelEvent
   parameters:

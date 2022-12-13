@@ -1,7 +1,5 @@
 ---
 get:
-  tags:
-  - transport
   summary: Get API infos
   operationId: getInfos
 
