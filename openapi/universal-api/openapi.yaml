@@ -104,10 +104,15 @@ tags:
 - name: api
   description: API handling
 
-- name: signals
-  description: Signal handling
+- name: channels
+  description: Channel handling
 
 paths:
+  /info:
+    $ref: paths/info.yaml
+  /status:
+    $ref: paths/status.yaml
+
   /channels:
     $ref: paths/channels.yaml
   /channel/{id}/sample:
