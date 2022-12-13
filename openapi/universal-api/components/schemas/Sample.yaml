@@ -22,7 +22,7 @@ properties:
     - unknown
 
   value:
-    title: Sample Value
+    title: A value of a sample or event
     oneOf:
     - type: number
     - type: integer
@@ -55,7 +55,6 @@ properties:
     - indeterminate
 
   source:
-    type: string
     default: unknown
     enum:
     - unknown
@@ -63,3 +62,4 @@ properties:
     - test
     - calculated
     - simulated
+

@@ -1,0 +1,10 @@
+---
+type: object
+properties:
+  connected:
+    description: An enum describes whether the transport node is connected to its remotes.
+    type: string
+    enum:
+    - "yes"
+    - "no"
+    - unknown

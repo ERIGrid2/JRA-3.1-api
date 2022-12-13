@@ -19,6 +19,12 @@ info:
 
     ## Terminology
 
+    ### Operator
+
+    An operator is a software component which interprets a global experiment configuration and processes it for configuring assets of an experiment.
+
+    An example of such an asset can be data-exchange transports, or lab equipment.
+
     ### Middleware
 
     Collection of services developed in the ERIGrid 2.0 project to facilitate interconnection of extended RIs.
@@ -36,6 +42,8 @@ info:
     External tool to facilitate data-exchange between RIs.
 
     Examples of current implementations are VILLAS, Jander, LabLink.
+
+    In the context of the ERIGrid __middleware__ the transport is one of the assets which is managed by an __operator__.
 
     ### Client
 
@@ -97,8 +105,8 @@ externalDocs:
   url: 'https://erigrid2.eu'
 
 servers:
-- url: 'https://api.erigrid2.eu/v1'
-- url: 'http://api.erigrid2.eu/v1'
+- url: 'https://api.erigrid2.eu/v2'
+- url: 'http://api.erigrid2.eu/v2'
 
 tags:
 - name: api

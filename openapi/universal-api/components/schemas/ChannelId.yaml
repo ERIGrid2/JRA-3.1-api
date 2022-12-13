@@ -1,6 +1,13 @@
 ---
 type: string
 title: Channel ID
-pattern: ^[a-z0-9-_/]+$
-description: A globally unique identifier for the channel
-example: aachen/lv/bus1/voltage/a
+pattern: ^[a-zA-Z0-9-_/.:]+$
+description: |
+  A globally unique identifier for the channel
+
+
+examples:
+- DTU::Storage_Vanadium:M_EA_Watt.instMag
+- DTU::Storage_Vanadium:M_EA_Var.instMag
+- DTU::Instrument_715-2.Gaia:M_EA_Watt.instMag
+- DTU::Storage_Vanadium:S_EA_Hz.instMag
