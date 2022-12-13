@@ -1,0 +1,8 @@
+---
+description: |
+  A monotonically incremented ID identifying an event.
+
+  Only present in events returned by the server
+
+type: integer
+min: 0

@@ -112,3 +112,5 @@ paths:
     $ref: paths/channels.yaml
   /channel/{id}/sample:
     $ref: paths/channel@{id}@sample.yaml
+  /channel/{id}/event:
+    $ref: paths/channel@{id}@event.yaml

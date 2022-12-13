@@ -1,0 +1,6 @@
+---
+type: array
+description: An list of events ordered by their event ID.
+items:
+  schema:
+    $ref: ../components/schemas/Event.yaml

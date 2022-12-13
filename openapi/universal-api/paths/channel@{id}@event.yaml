@@ -1,0 +1,63 @@
+---
+get:
+  tags:
+  - channels
+  summary: Get events from a channel
+  operationId: getChannelEvent
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      $ref: ../components/schemas/ChannelId.yaml
+  - name: since_id
+    description: The oldest event ID the requester does not want to request.
+    in: query
+    schema:
+      $ref: ../components/schemas/EventId.yaml
+
+  responses:
+    200:
+      description:
+      content:
+        application/list:
+          schema:
+            type: object
+            properties:
+              events:
+                $ref: ../components/schemas/EventQueue.yaml
+              last_id:
+                $ref: ../components/schemas/EventId.yaml
+    400:
+      description: Invalid channel ID supplied
+    404:
+      description: Channel ID not found
+
+put:
+  tags:
+  - channels
+  summary: Send event to channel
+  operationId: putChannelEvent
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      $ref: ../components/schemas/ChannelId.yaml
+
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/EventQueue.yaml
+
+  responses:
+    200:
+      description: Success. Channel has been updated.
+    400:
+      description: Invalid channel ID supplied
+    404:
+      description: Channel ID not found
+    405:
+      description: Validation exception
