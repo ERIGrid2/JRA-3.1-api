@@ -112,12 +112,3 @@ paths:
     $ref: paths/channels.yaml
   /channel/{id}/sample:
     $ref: paths/channel@{id}@sample.yaml
-
-  /transport/info:
-    $ref: paths/transport@info.yaml
-  /transport/status:
-    $ref: paths/transport@status.yaml
-  /transport/start:
-    $ref: paths/transport@start.yaml
-  /transport/stop:
-    $ref: paths/transport@stop.yaml
