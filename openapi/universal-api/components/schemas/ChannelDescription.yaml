@@ -1,0 +1,59 @@
+---
+type: object
+properties:
+  id:
+    $ref: ChannelId.yaml
+
+  description:
+    type: string
+    description: A human readable description of the channel.
+
+  payload:
+    description: |
+      Describes the type of information which is exchanged over the channel.
+
+    type: string
+    enum:
+    - events
+    - samples
+
+  range:
+    oneOf:
+    - type: object
+      description: Limits for numeric datatypes
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+
+    - type: array
+      description: A list of allowed string values for string datatype
+      items:
+        type: string
+
+  writable:
+    type: boolean
+
+  readable:
+    type: boolean
+
+  datatype:
+    type: string
+    enum:
+    - float
+    - complex
+    - integer
+    - string
+    - boolean
+
+  unit:
+    $ref: Unit.yaml
+
+  rate:
+    optional: true
+    type: number
+    description: |
+      Expected refresh-rate in Hertz of this channel
+
+      Does not apply channels which have event payloads.

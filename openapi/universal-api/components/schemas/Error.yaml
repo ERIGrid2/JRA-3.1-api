@@ -1,0 +1,9 @@
+---
+type: object
+required:
+- description
+
+properties:
+  description:
+    type: string
+    description: A human readable description of the error.

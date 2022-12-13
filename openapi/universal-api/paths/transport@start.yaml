@@ -1,9 +1,9 @@
 ---
 get:
   tags:
-  - api
-  summary: Get API infos
-  operationId: getInfos
+  - transport
+  summary: Start transport
+  operationId: startTransport
 
   responses:
     200:

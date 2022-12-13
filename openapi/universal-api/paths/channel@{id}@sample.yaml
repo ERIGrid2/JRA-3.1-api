@@ -1,0 +1,51 @@
+---
+get:
+  tags:
+  - channels
+  summary: Get the last sample of a channel
+  operationId: getChannel
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      $ref: ../components/schemas/ChannelId.yaml
+  responses:
+    200:
+      description:
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Sample.yaml
+    400:
+      description: Invalid channel ID supplied
+    404:
+      description: Channel ID not found
+
+put:
+  tags:
+  - channels
+  summary: Update an existing channel
+  operationId: updateChannel
+  parameters:
+  - name: id
+    in: path
+    required: true
+    schema:
+      $ref: ../components/schemas/ChannelId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Sample.yaml
+
+  responses:
+    200:
+      description: Success. Channel has been updated.
+    400:
+      description: Invalid channel ID supplied
+    404:
+      description: Channel ID not found
+    405:
+      description: Validation exception

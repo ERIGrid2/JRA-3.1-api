@@ -1,0 +1,6 @@
+---
+type: string
+title: Channel ID
+pattern: ^[a-z0-9-_/]+$
+description: A globally unique identifier for the channel
+example: aachen/lv/bus1/voltage/a

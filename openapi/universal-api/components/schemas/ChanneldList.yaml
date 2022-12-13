@@ -1,8 +1,8 @@
 ---
 type: array
-title: Signal ID list
+title: Channel ID list
 items:
-  $ref: SignalId.yaml
+  $ref: ChannelId.yaml
 example:
 - aachen/lv/bus1/voltage/a
 - aachen/lv/bus1/voltage/b

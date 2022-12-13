@@ -5,6 +5,76 @@ info:
   description: |
     A common API used by ERIGrid research infrastructures to exchange signals for geographically distributed experiments.
 
+    ## Capabilities
+
+    Each implementation of the universal API is free to implement a subset of the endpoints specified by this API.
+    The transports shall document which features are implemented and return a 501 "Not Implemented" HTTP status code in case an unsupported
+    endpoint is used.
+
+    ## Error handling
+
+    The universal API uses the HTTP status codes an maps them accordingly.
+    All requests to the API must return a response body of Content-type "application/json".
+    This also applies to failed requests (status codes 400 - 599).
+
+    ## Terminology
+
+    ### Middleware
+
+    Collection of services developed in the ERIGrid 2.0 project to facilitate interconnection of extended RIs.
+
+    This includes data-exchange, configuration management, time-sychronization, etc...
+
+    ### Server
+
+    An HTTP server implementing the Universal API which is accessed by the __clients__.
+
+    Implemented by a __transport__.
+
+    ### Transport
+
+    External tool to facilitate data-exchange between RIs.
+
+    Examples of current implementations are VILLAS, Jander, LabLink.
+
+    ### Client
+
+    A HTTP client implementing the Universal API which makes requests towards a __server__.
+
+    ### Node
+
+    A software instance of the __transport__ solution typically deployed in each RI.
+
+    Examples of node can be a Raspberry Pi or Virtual Machine.
+
+    ### RI Adapter
+
+    RI-specific data-exchange software __client__ between the RI SCADA / equipment and the uAPI __server__.
+
+    ### Channel
+
+    A source or sink of samples or events at a single point.
+
+    Examples are measurement, set points, states or commands and events.
+
+    ### Sample
+
+    Describes the snapshot of __value__ and additional attributes of a __channel__ at a specific point in time.
+
+    It contains a __value__ and metadata attributes such as quality and timestamp.
+
+    Samples are usually acquired or updated on a periodical basis.
+
+    ### Event
+
+    In contrast to a sample, events are an asynchronous, non-continuous actions/stimulus.
+
+    For example, they can be used to represent control commands or fault events and state changes.
+
+    ### Value
+
+    A value is key payload (i.e. not metadata) of a __sample__.
+
     ## Funding acknowledgement
 
     <img alt="European Flag" src="https://erigrid2.eu/wp-content/uploads/2020/03/europa_flag_low.jpg" align="left" style="margin-right: 10px"/> The development of JRA3.1 API has been supported by the [ERIGrid 2.0](https://erigrid2.eu) project of the H2020 Programme under [Grant Agreement No. 870620](https://cordis.europa.eu/project/id/870620)
@@ -38,11 +108,16 @@ tags:
   description: Signal handling
 
 paths:
-  /info:
-    $ref: paths/info.yaml
-  /config:
-    $ref: paths/config.yaml
-  /signals:
-    $ref: paths/signals.yaml
-  /signal/{id}/state:
-    $ref: paths/signal@{id}@state.yaml
+  /channels:
+    $ref: paths/channels.yaml
+  /channel/{id}/sample:
+    $ref: paths/channel@{id}@sample.yaml
+
+  /transport/info:
+    $ref: paths/transport@info.yaml
+  /transport/status:
+    $ref: paths/transport@status.yaml
+  /transport/start:
+    $ref: paths/transport@start.yaml
+  /transport/stop:
+    $ref: paths/transport@stop.yaml

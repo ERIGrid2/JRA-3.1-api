@@ -1,0 +1,7 @@
+---
+type: string
+description: The unit of the channel
+examples:
+- V
+- A
+- W

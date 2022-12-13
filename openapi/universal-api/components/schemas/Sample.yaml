@@ -1,0 +1,65 @@
+---
+type: object
+
+required:
+- value
+- timestamp
+
+properties:
+  timestamp:
+    title: Signal timestamp
+    type: number
+    description: A point in time when this signal has been measured or generated
+      by a contoller or simulator. Provided as floating point UNIX timestamp
+    example: 1644407419.123
+
+  timesource:
+    type: string
+    default: unknown
+    enum:
+    - synchronized
+    - unsynchronized
+    - unknown
+
+  value:
+    title: Sample Value
+    oneOf:
+    - type: number
+    - type: integer
+    - type: boolean
+    - type: string
+    - type: object
+      properties:
+        imag:
+          description: Imaginary part
+          type: number
+        real:
+          description: Real part
+          type: number
+
+    examples:
+    - 230.4
+    - true
+    - imag: 1.0
+      real: 2.0
+    - "some string value"
+
+  validity:
+    type: string
+    default: unknown
+    enum:
+    - unknown
+    - valid
+    - invalid
+    - questionable
+    - indeterminate
+
+  source:
+    type: string
+    default: unknown
+    enum:
+    - unknown
+    - process
+    - test
+    - calculated
+    - simulated

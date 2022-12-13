@@ -1,0 +1,36 @@
+---
+get:
+  tags:
+  - channels
+  summary: List all available channels
+  operationId: getChannels
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ChannelDescriptionList.yaml
+
+    400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Error.yaml
+
+put:
+  tags:
+  - channels
+  summary: Configure available channels in the transport
+  operationId: putChannels
+  responses:
+    200:
+      description: Success
+
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ChannelDescriptionList.yaml

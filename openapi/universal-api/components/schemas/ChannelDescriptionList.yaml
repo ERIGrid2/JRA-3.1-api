@@ -1,0 +1,5 @@
+---
+type: array
+title: List of channels descriptions
+items:
+  $ref: ChannelDescription.yaml
