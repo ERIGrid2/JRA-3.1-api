@@ -11,10 +11,3 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/ChannelDescriptionList.yaml
-
-    400:
-      description: Bad request
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/Error.yaml
