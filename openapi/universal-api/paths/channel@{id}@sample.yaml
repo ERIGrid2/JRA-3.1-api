@@ -12,13 +12,11 @@ get:
       $ref: ../components/schemas/ChannelId.yaml
   responses:
     200:
-      description:
+      description: Success. Channel has been updated.
       content:
         application/json:
           schema:
             $ref: ../components/schemas/Sample.yaml
-    200:
-      description: Success. Channel has been updated.
     400:
       description: Invalid / malformed channel ID supplied
     403:
