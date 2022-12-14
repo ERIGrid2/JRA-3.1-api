@@ -17,10 +17,16 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/Sample.yaml
+    200:
+      description: Success. Channel has been updated.
     400:
-      description: Invalid channel ID supplied
+      description: Invalid / malformed channel ID supplied
+    403:
+      description: Channel not readable
     404:
       description: Channel ID not found
+    405:
+      description: Validation error (wrong data type)
 
 put:
   tags:
@@ -44,8 +50,10 @@ put:
     200:
       description: Success. Channel has been updated.
     400:
-      description: Invalid channel ID supplied
+      description: Invalid / malformed channel ID supplied
+    403:
+      description: Channel not writable
     404:
       description: Channel ID not found
     405:
-      description: Validation exception
+      description: Validation error (wrong data type)
