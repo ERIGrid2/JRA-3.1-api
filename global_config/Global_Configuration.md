@@ -1,5 +1,5 @@
 # ERIGrid 2.0 Middleware - Experiment Configuration
-
+# test global config for MVP
 - **File format:** YAML
 
 - Global data-exchange config
