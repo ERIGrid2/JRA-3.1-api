@@ -50,9 +50,3 @@ ri_adapters:
   nodes:
   - ri1
   - ri2
-
-  # All following attributes are specific to the type of adapter
-  # and not covered by the global config schema.
-
-  mapping: ...
-```
