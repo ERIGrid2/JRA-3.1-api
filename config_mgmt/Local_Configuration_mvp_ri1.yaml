@@ -1,0 +1,34 @@
+# Local RI 1 mvp config
+nodes:
+  uapi_endpoint: http://localhost:8081
+
+  channels: # This node provides (sources) these channels
+    incoming:
+    - { id: ri2::amp:P, unit: mW, rate: 10.0 }
+    - { id: ri2::amp:Q, unit: pu, rate: 10.0 }
+    outgoing:
+    - { id: ri1::rtds:f, unit: Hz, rate: 10.0 }
+    - { id: ri1::rtds:U, unit: kV, rate: 10.0 }
+
+  transport:
+    type: villas
+
+    # All following attributes are specific to the type of transport
+    # and not covered by the global config schema.
+    villas-node:
+      host: localhost
+      port: 9001
+
+connections:
+- {from: ri1::rtds:f, to: ri2::amp:f}
+- {from: ri1::rtds:U, to: ri2::amp:U}
+- {from: ri2::amp:P, to: ri1::rtds:P}
+- {from: ri2::amp:Q, to: ri1::rtds:Q}
+  resolver: client-server
+  
+ri_adapters:
+- type: mvp_adapter
+
+  nodes:
+  - ri1
+  - ri2
