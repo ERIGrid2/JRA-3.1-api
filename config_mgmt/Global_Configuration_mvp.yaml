@@ -1,14 +1,14 @@
 # MVP config
 nodes:
   ri1:
-    description: Research infrastructure 1
+    description: "Research infrastructure 1"
 
-    uapi_endpoint: http://localhost:8081 # Optional
+    uapi_endpoint: "http://localhost:8081" # Optional
 
     channels: # This node provides (sources) these channels
 
-    - { id: ri1::rtds:f, unit: Hz, rate: 10.0 }
-    - { id: ri1::rtds:U, unit: kV, rate: 10.0 }
+    - { id: "ri1::rtds:f", unit: Hz, rate: 10.0, description: "PCC frequency" }
+    - { id: "ri1::rtds:U", unit: kV, rate: 10.0, description: "PCC voltage"}
 
     transport:
       type: villas
@@ -16,18 +16,19 @@ nodes:
       # All following attributes are specific to the type of transport
       # and not covered by the global config schema.
       villas-node:
-        host: localhost
-        port: 9001
+        api-host: localhost
+        api-port: 9001
+        node-type: udp
 
   ri2:
-    description: Research infrastructure 2
+    description: "Research infrastructure 2"
 
-    uapi_endpoint: http://localhost:8082 # Optional
+    uapi_endpoint: "http://localhost:8082" # Optional
 
     channels: # This node provides (sources) these channels
 
-    - { id: ri2::amp:P, unit: mW, rate: 10.0 }
-    - { id: ri2::amp:Q, unit: pu, rate: 10.0 }
+    - { id: "ri2::amp:P", unit: mW, rate: 10.0, description: "Amplifier active power measurement"}
+    - { id: "ri2::amp:Q", unit: pu, rate: 10.0, description: "Amplifier reactive power measurement"}
 
     transport:
       type: villas
@@ -35,16 +36,19 @@ nodes:
       # All following attributes are specific to the type of transport
       # and not covered by the global config schema.
       villas-node:
-        host: localhost
-        port: 9002
+        api-host: localhost
+        api-port: 9002
+        node-type: udp
 
 connections:
-- {from: ri1::rtds:f, to: ri2}
-- {from: ri1::rtds:U, to: ri2}
-- {from: ri2::amp:P, to: ri1}
-- {from: ri2::amp:Q, to: ri1}
+- {from: "ri1::rtds:f", to-ri: "ri2", to-channel: "ri2::amp:f"}
+- {from: "ri1::rtds:U", to-ri: "ri2", to-channel: "ri2::amp:U"}
+- {from: "ri2::amp:P", to-ri: "ri1", to-channel: "ri1::rtds:P"}
+- {from: "ri2::amp:Q", to-ri: "ri1", to-channel: "ri1::rtds:Q"}
+resolvers:
+- {nodes: [ri1, ri2], resolver: peer-to-peer}
 
-ri_adapters:
+ri_adapters: #probably to be moved to local lab configurations
 - type: mvp_adapter
 
   nodes:

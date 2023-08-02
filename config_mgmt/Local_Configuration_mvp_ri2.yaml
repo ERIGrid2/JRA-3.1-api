@@ -1,0 +1,33 @@
+# Local RI 2 mvp config
+nodes:
+  uapi_endpoint: http://localhost:8082
+
+  channels: # This node provides (sources) these channels
+    incoming:
+    - { id: ri1::rtds:f}
+    - { id: ri2::rtds:U}
+    outgoing:
+    - { id: ri2::amp:P, unit: mW, rate: 10.0, description: "Amplifier active power measurement"  }
+    - { id: ri1::amp:Q, unit: pu, rate: 10.0, description: "Amplifier reactive power measurement" }
+
+  transport:
+    type: villas
+
+    # All following attributes are specific to the type of transport
+    # and not covered by the global config schema.
+    villas-node:
+      api-host: localhost
+      api-port: 9002
+      node-type: udp
+
+    resolver-result:
+      startup: yes
+      address-outgoing: "localhost:4446"
+      address-incoming: "localhost:4445"
+  
+ri_adapters: #probably to be moved to local lab configurations
+- type: mvp_adapter
+
+  nodes:
+  - ri1
+  - ri2

@@ -4,11 +4,11 @@ nodes:
 
   channels: # This node provides (sources) these channels
     incoming:
-    - { id: ri2::amp:P, unit: mW, rate: 10.0 }
-    - { id: ri2::amp:Q, unit: pu, rate: 10.0 }
+    - { id: ri2::amp:P}
+    - { id: ri2::amp:Q}
     outgoing:
-    - { id: ri1::rtds:f, unit: Hz, rate: 10.0 }
-    - { id: ri1::rtds:U, unit: kV, rate: 10.0 }
+    - { id: ri1::rtds:f, unit: Hz, rate: 10.0, description: "PCC frequency"  }
+    - { id: ri1::rtds:U, unit: kV, rate: 10.0, description: "PCC voltage" }
 
   transport:
     type: villas
@@ -16,17 +16,16 @@ nodes:
     # All following attributes are specific to the type of transport
     # and not covered by the global config schema.
     villas-node:
-      host: localhost
-      port: 9001
+      api-host: localhost
+      api-port: 9001
+      node-type: udp
 
-connections:
-- {from: ri1::rtds:f, to: ri2::amp:f}
-- {from: ri1::rtds:U, to: ri2::amp:U}
-- {from: ri2::amp:P, to: ri1::rtds:P}
-- {from: ri2::amp:Q, to: ri1::rtds:Q}
-  resolver: client-server
+    resolver-result:
+      startup: yes
+      address-outgoing: "localhost:4445"
+      address-incoming: "localhost:4446"
   
-ri_adapters:
+ri_adapters: #probably to be moved to local lab configurations
 - type: mvp_adapter
 
   nodes:
