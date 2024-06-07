@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Rajkumar"
+  given-names: "Vetrivel"
+  orcid: "https://orcid.org/0000-0002-5231-6790"
+- family-names: "Silano", 
+  given-names: "Giuseppe" 
+  orcid: "https://orcid.org/0000-0002-6816-6002"
+- family-names: "Gehrke" 
+  given-names: "Oliver" 
+  orcid: "https://orcid.org/000-0001-8184-6435"
+- family-names: "Vogel" 
+  given-names: "Steffen" 
+  orcid: "https://orcid.org/0000-0003-3384-6750"
+- family-names: "Widl" 
+  given-names: "Edmund" 
+  orcid: "https://orcid.org/0000-0002-2834-306X"
+- family-names: "Paludetto" 
+  given-names: "Gabriele" 
+- family-names: "Rikos" 
+  given-names: "Evangelos" 
+- family-names: "Zerihun" 
+  given-names: "Tesfaye Amare"
+  orcid: "https://orcid.org/0000-0002-3893-957X"
+- family-names: "Stefanov"
+  given-names: "Alexandru" 
+  orcid: "https://orcid.org/0000-0003-4707-7948"
+- family-names: "Palensky" 
+  given-names: "Peter" 
+  orcid: "https://orcid.org/0000-0003-3183-4705"
+- family-names: "Strasser" 
+  given-names: "Thomas I." 
+  orcid: "https://orcid.org/0000-0002-6415-766X"
+title: "Laboratory Middleware for the Cyber-Physical Integration of Energy Research Infrastructures"
+doi: 10.1109/MSCPES62135.2024.10542755
+year: 2024
+start: 1 # First page number
+end: 5 # Last page number
+date-released: 2024-06-05
+url: "https://ieeexplore.ieee.org/document/10542755"
+  
