@@ -1,5 +1,20 @@
 # The ERIGrid 2.0 middleware API OpenAPI Definition
 
+If you are using this code for research purposes, especially for your publication, please do not forget to cite one of these papers.
+
+```console
+@INPROCEEDINGS{10542755,
+  author={Rajkumar, Vetrivel and Silano, Giuseppe and Gehrke, Oliver and Vogel, Steffen and Widl, Edmund and Paludetto, Gabriele and Rikos, Evangelos and Zerihun, Tesfaye Amare and Ştefanov, Alexandru and Palensky, Peter and Strasser, Thomas I.},
+  booktitle={2024 12th Workshop on Modeling and Simulation of Cyber-Physical Energy Systems (MSCPES)}, 
+  title={Laboratory Middleware for the Cyber-Physical Integration of Energy Research Infrastructures}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-5},
+  keywords={Transport protocols;Conferences;Laboratories;Semantics;Middleware;Software tools;API;middleware;lab-coupling;research infrastructure;power and energy systems},
+  doi={10.1109/MSCPES62135.2024.10542755}}
+```
+
 ## Working on your OpenAPI Definition
 
 ### Install
